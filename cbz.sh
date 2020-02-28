@@ -3,7 +3,7 @@
 # If converting to PDF, use https://github.com/bronson/pdfdir to stitch chapters together
 
 if [ "$#" -lt 2 ]; then
-    echo "$0 <pdf|cbz> <folder> [output]"
+    echo "$0 <pdf|cbz> <in folder> [out folder]"
     exit
 fi
 
