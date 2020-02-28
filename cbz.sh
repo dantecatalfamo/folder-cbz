@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# If converting to PDF, use https://github.com/bronson/pdfdir to stitch chapters together
+
 if [ "$#" -ne 2 ]; then
     echo "$0 [pdf|cbz] <folder>"
     exit
