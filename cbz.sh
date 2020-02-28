@@ -17,7 +17,7 @@ for chapter in $chapters; do
     cd "$chapter"
     chapternum=$(echo $chapter | cut -d ' ' -f 1)
     echo "Processing $chapternum"
-    chapterout="$output/$chapternum.cbz"
+    chapterout="$output/$series $chapternum.cbz"
     if [ -e $chapterout ]; then
         echo "Chapter $chapternum.cbz already exists, skipping"
         cd ..
