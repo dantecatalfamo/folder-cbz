@@ -2,8 +2,8 @@
 
 # If converting to PDF, use https://github.com/bronson/pdfdir to stitch chapters together
 
-if [ "$#" -ne 2 ]; then
-    echo "$0 [pdf|cbz] <folder>"
+if [ "$#" -lt 2 ]; then
+    echo "$0 <pdf|cbz> <folder> [output]"
     exit
 fi
 
@@ -19,7 +19,11 @@ path=$(realpath $2)
 echo "Path: $path"
 series=$(basename $path)
 echo "Series: $series"
-output=$(realpath "$path/../$series $type")
+if [ "$3" != "" ]; then
+    output=$(realpath "$3")
+else
+    output=$(realpath "$path/../$series $type")
+fi
 echo "Output: $output"
 mkdir -p "$output"
 
